@@ -157,7 +157,7 @@ const AddTouristsSpot = () => {
 
                     
 
-                    <input className="btn text-white bg-[#135D66] w-full mt-6" type="submit" value="Add Coffee" />
+                    <input className="btn text-white bg-[#135D66] w-full mt-6" type="submit" value="Add Tourists Spot" />
                 </form>
             </div>
         </div>
