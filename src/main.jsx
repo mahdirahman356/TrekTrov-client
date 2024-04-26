@@ -12,6 +12,8 @@ import SignUp from './Components/SignUp';
 import Context from './Context/Context';
 import AddTouristsSpot from './Components/AddTouristsSpot';
 import Update from './Components/Update';
+import TouristsSpotDetails from './Components/TouristsSpotDetails';
+import PrivetRoute from './PrivetRoute/PrivetRoute';
 
 const router = createBrowserRouter([
   {
@@ -29,16 +31,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/signUp",
-        element:<SignUp></SignUp>
+        element: <SignUp></SignUp>
       },
       {
-        path : "/addTourists",
-        element: <AddTouristsSpot></AddTouristsSpot>
+        path: "/addTourists",
+        element: <PrivetRoute>
+          <AddTouristsSpot></AddTouristsSpot>
+        </PrivetRoute>
       },
       {
         path: "/update/:id",
-        loader: ({params}) => fetch(`http://localhost:5000/touristsSpot/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/touristsSpot/${params.id}`),
         element: <Update></Update>
+      },
+      {
+        path: "/touristsDetails/:id",
+        loader: ({ params }) => fetch(`http://localhost:5000/touristsSpot/${params.id}`),
+        element: <TouristsSpotDetails></TouristsSpotDetails>
       }
     ]
   },
@@ -47,7 +56,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Context>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </Context>
   </React.StrictMode>,
 )

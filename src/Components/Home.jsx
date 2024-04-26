@@ -2,9 +2,12 @@ import { useLoaderData } from "react-router-dom";
 import Header from "../Header/Header";
 import TouristsSpotSection from "./TouristsSpotSection";
 import "../App.css"
+import { useState } from "react";
 const Home = () => {
     let touristsSpot = useLoaderData()
     console.log(touristsSpot)
+    let [tourist, setTourist] = useState(touristsSpot)
+
     return (
         <div>
             <Header></Header>
@@ -17,9 +20,11 @@ const Home = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-[95%] md:w-[80%] mx-auto">
                     {
-                        touristsSpot.map((tour, index) => <TouristsSpotSection
+                        tourist.map((tourist, index) => <TouristsSpotSection
                             key={index}
-                            tour={tour}
+                            tourist={tourist}
+                            setTourist={setTourist}
+                            touristsSpot={touristsSpot}
                         ></TouristsSpotSection>)
                     }
                 </div>
