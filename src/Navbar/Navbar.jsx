@@ -42,7 +42,7 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1 gap-8 mx-8">
                     <NavLink>Home </NavLink>
                     <NavLink>All Tourists Spot</NavLink>
-                    <NavLink>Add Tourists Spot</NavLink>
+                    <NavLink to="/addTourists">Add Tourists Spot</NavLink>
                     <NavLink>My List</NavLink>
                     <NavLink to="/signUp">Sign Up</NavLink>
                     <NavLink to="/signIn">Sign In</NavLink>

@@ -10,6 +10,7 @@ import Home from './Components/Home';
 import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import Context from './Context/Context';
+import AddTouristsSpot from './Components/AddTouristsSpot';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/signUp",
         element:<SignUp></SignUp>
+      },
+      {
+        path : "/addTourists",
+        element: <AddTouristsSpot></AddTouristsSpot>
       }
     ]
   },
