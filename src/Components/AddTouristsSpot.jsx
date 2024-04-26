@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import "../App.css"
 
 const AddTouristsSpot = () => {
@@ -18,6 +19,24 @@ const AddTouristsSpot = () => {
         let description = form.description.value
         let addTourists = {touristSpot,  photoURL, cost, seasonality, travelTime, perYear, countryName, location, email,description,  name}
         console.log(addTourists)
+        fetch("http://localhost:5000/touristsSpot", {
+            method: "POST",
+            headers: {"content-type" : "application/json"},
+            body: JSON.stringify(addTourists)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            form.reset()
+            if(data.acknowledged === true){
+                Swal.fire({
+                    title: 'Success',
+                    text: 'You Added Tourists Spot Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
     }
 
     return (

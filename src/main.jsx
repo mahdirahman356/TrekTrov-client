@@ -11,6 +11,7 @@ import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import Context from './Context/Context';
 import AddTouristsSpot from './Components/AddTouristsSpot';
+import Update from './Components/Update';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        loader: () => fetch("http://localhost:5000/touristsSpot"),
         element: <Home></Home>
       },
       {
@@ -32,6 +34,11 @@ const router = createBrowserRouter([
       {
         path : "/addTourists",
         element: <AddTouristsSpot></AddTouristsSpot>
+      },
+      {
+        path: "/update/:id",
+        loader: ({params}) => fetch(`http://localhost:5000/touristsSpot/${params.id}`),
+        element: <Update></Update>
       }
     ]
   },
