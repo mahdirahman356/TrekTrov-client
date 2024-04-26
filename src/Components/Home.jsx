@@ -2,11 +2,11 @@ import { useLoaderData } from "react-router-dom";
 import Header from "../Header/Header";
 import TouristsSpotSection from "./TouristsSpotSection";
 import "../App.css"
-import { useState } from "react";
+// import { useState } from "react";
 const Home = () => {
-    let touristsSpot = useLoaderData()
-    console.log(touristsSpot)
-    let [tourist, setTourist] = useState(touristsSpot)
+    let tourist = useLoaderData()
+    // console.log(touristsSpot)
+    // let [tourist, setTourist] = useState(touristsSpot)
 
     return (
         <div>
@@ -23,8 +23,6 @@ const Home = () => {
                         tourist.map((tourist, index) => <TouristsSpotSection
                             key={index}
                             tourist={tourist}
-                            setTourist={setTourist}
-                            touristsSpot={touristsSpot}
                         ></TouristsSpotSection>)
                     }
                 </div>

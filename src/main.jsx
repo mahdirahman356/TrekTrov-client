@@ -14,6 +14,8 @@ import AddTouristsSpot from './Components/AddTouristsSpot';
 import Update from './Components/Update';
 import TouristsSpotDetails from './Components/TouristsSpotDetails';
 import PrivetRoute from './PrivetRoute/PrivetRoute';
+import AllTouristsSpot from './Components/AllTouristsSpot';
+import MyList from './Components/MyList';
 
 const router = createBrowserRouter([
   {
@@ -47,7 +49,20 @@ const router = createBrowserRouter([
       {
         path: "/touristsDetails/:id",
         loader: ({ params }) => fetch(`http://localhost:5000/touristsSpot/${params.id}`),
-        element: <TouristsSpotDetails></TouristsSpotDetails>
+        element: <PrivetRoute>
+          <TouristsSpotDetails></TouristsSpotDetails>
+        </PrivetRoute>
+      },
+      {
+        path: "/allTouristsSpot",
+        loader: () => fetch("http://localhost:5000/touristsSpot"),
+        element:<AllTouristsSpot></AllTouristsSpot>
+      },
+      {
+        path:"/mylist",
+        element:<PrivetRoute>
+          <MyList></MyList>
+        </PrivetRoute>
       }
     ]
   },
