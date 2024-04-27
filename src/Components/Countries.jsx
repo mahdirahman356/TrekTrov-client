@@ -1,18 +1,17 @@
-import { useContext} from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../Context/Context";
 
 const Countries = () => {
 
-    let {country} = useContext(AuthContext)
+    // let {country} = useContext(AuthContext)
 
-    // let [country, setCountry] = useState([])
+    let [country, setCountry] = useState([])
 
-    // useEffect(() => {
-    // fetch("http://localhost:5000/country")
-    // .then(res => res.json())
-    // .then(data => setCountry(data))
-    // },[])
+    useEffect(() => {
+    fetch("http://localhost:5000/country")
+    .then(res => res.json())
+    .then(data => setCountry(data))
+    },[])
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {

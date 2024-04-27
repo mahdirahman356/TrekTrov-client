@@ -5,7 +5,6 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/Context";
 const AllTouristsSpot = () => {
     let [allTourists, setAllTourists] = useState([])
-    console.log(allTourists)
 
     let {loading, setLoading} = useContext(AuthContext)
 
@@ -14,10 +13,10 @@ const AllTouristsSpot = () => {
      fetch("http://localhost:5000/touristsSpot")
      .then(res => res.json())
      .then(data => setAllTourists(data))
-    },[])
+    },[setLoading])
     
     let handleSorting = () => {
-        let sortedTourists = [...allTourists].sort((a, b) => a.cost - b.cost);
+        let sortedTourists = [...allTourists].sort((a, b) => parseFloat(a.cost) - parseFloat(b.cost));
         setAllTourists(sortedTourists);
     }
     
@@ -30,29 +29,29 @@ const AllTouristsSpot = () => {
             </div>
             <div className="w-[90%] md:w-[80%] mx-auto flex justify-center items-center mb-7">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn m-1 text-white bg-[#135D66]">Sort By Average Cost <FaAngleDown className="text-[20px]"/></div>
+                    <div tabIndex={0} role="button" className="btn m-1 btn-outline border-2 border-[#135D66] text-[#135D66]">Sort By Average Cost <FaAngleDown className="text-[20px]"/></div>
                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                        <li onClick={handleSorting}><a>Average Cost</a></li>
+                        <li onClick={handleSorting}><a>lowest to highest</a></li>
                     </ul>
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-[95%] md:w-[80%] mx-auto">
                 {
-                    allTourists.map((allTourists, index) => <div key={index} className="card bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
-                            <img src={allTourists.photoURL} alt="Shoes" className="rounded-xl" />
-                        </figure>
-                        <div className="card-body">
-                            <h2 className="font-semibold text-xl text-center ubuntu">{allTourists.touristSpot}</h2>
-                            <p className="font-semibold text-center"><span className="font-normal">{allTourists.seasonality}</span></p>
-                            <p className="font-semibold mt-5">Average Cost: <span className="text-red-500">{allTourists.cost}</span></p>
-                            <p className="font-semibold">Total Visitors Per Year: <span className="font-normal">{allTourists.perYear}</span></p>
-                            <p className="font-semibold">Travel Time: <span className="font-normal">{allTourists.travelTime}</span></p>
-                            <div className="card-actions mt-6 flex justify-center ">
-                                <Link to={`/touristsDetails/${allTourists._id}`}><button className="btn text-white bg-[#135D66] ubuntu">View Details</button></Link>
-                            </div>
-                        </div>
-                    </div>)
+                    allTourists.map((allTourists, index) =>
+                    <div key={index} className="card w-96 bg-base-100 shadow-xl">
+                    <figure><img src={allTourists.photoURL} alt="Shoes" /></figure>
+                    <div className="card-body">
+                        <h2 className="card-title">{allTourists.touristSpot}</h2>
+                        <p>{allTourists.description}</p>
+                        <p className="text-xl font-semibold">Average Cost:<span className="text-red-500">{allTourists.cost}</span></p>
+                        <ul className="list-disc pl-3">
+                            <li className="font-semibold">Countery: <span className="font-normal">{allTourists.countryName}</span></li>
+                            <li className="font-semibold">Location: <span className="font-normal">{allTourists.location}</span></li>
+                            <li className="font-semibold">Seasonality: <span className="font-normal">{allTourists.seasonality}</span></li>
+                        </ul>
+                        <Link to={`/touristsDetails/${allTourists._id}`}><button className="btn  mt-4 text-white bg-[#135D66] w-full">View Details</button></Link>
+                    </div>
+                </div>)
                 }
             </div>
         </div>

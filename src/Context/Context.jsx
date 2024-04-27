@@ -54,15 +54,6 @@ const Context = ({children}) => {
     }
     },[])
 
-
-    let [country, setCountry] = useState([])
-
-    useEffect(() => {
-    fetch("http://localhost:5000/country")
-    .then(res => res.json())
-    .then(data => setCountry(data))
-    },[])
-
     let authInfo =
      {
       user, 
@@ -73,7 +64,6 @@ const Context = ({children}) => {
       userSignOut,
       loading,
       setLoading,
-      country
     }
     
     return (
