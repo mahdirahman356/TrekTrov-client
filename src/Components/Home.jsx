@@ -40,7 +40,20 @@ const Home = () => {
                     <Countries></Countries>
                 </div>
             </div>
-            <ImageSection></ImageSection>
+
+
+            <div>
+                <div>
+                <div className="text-center my-24 ubuntu w-[90%] md:w-[50%] mx-auto">
+                    <p className="text-2xl md:text-3xl font-bold mb-3">Go Exotic Places</p>
+                    <p className="text-gray-500">When it comes to exploring exotic places, the choices are numerous. Whether you like peaceful destinations or vibrant landscapes, we have offers for you.</p>
+                </div>    
+                </div>
+                <div className=" w-[95%] md:w-[80%] mx-auto">
+                <ImageSection></ImageSection>
+                </div>
+            </div>
+            
         </div>
     );
 };
