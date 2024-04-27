@@ -17,6 +17,7 @@ import PrivetRoute from './PrivetRoute/PrivetRoute';
 import AllTouristsSpot from './Components/AllTouristsSpot';
 import MyList from './Components/MyList';
 import Error from './Error/Error';
+import CountryTourists from './Components/CountryTourists';
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,11 @@ const router = createBrowserRouter([
         element:<PrivetRoute>
           <MyList></MyList>
         </PrivetRoute>
+      },
+      {
+        path: "/countryTourists/:countryName",
+        loader: ({params}) => fetch(`http://localhost:5000/touristsSpot/countryName/${params.countryName}`),
+        element:<CountryTourists></CountryTourists>
       }
     ]
   },
