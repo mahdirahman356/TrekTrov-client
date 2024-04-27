@@ -16,11 +16,13 @@ import TouristsSpotDetails from './Components/TouristsSpotDetails';
 import PrivetRoute from './PrivetRoute/PrivetRoute';
 import AllTouristsSpot from './Components/AllTouristsSpot';
 import MyList from './Components/MyList';
+import Error from './Error/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainRoute></MainRoute>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: "/",

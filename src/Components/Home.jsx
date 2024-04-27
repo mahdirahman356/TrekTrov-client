@@ -2,11 +2,8 @@ import { useLoaderData } from "react-router-dom";
 import Header from "../Header/Header";
 import TouristsSpotSection from "./TouristsSpotSection";
 import "../App.css"
-// import { useState } from "react";
 const Home = () => {
     let tourist = useLoaderData()
-    // console.log(touristsSpot)
-    // let [tourist, setTourist] = useState(touristsSpot)
 
     return (
         <div>

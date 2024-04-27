@@ -21,25 +21,25 @@ const Header = () => {
                 <div>
                     <div className="carousel carousel-center rounded-box">
                         <div className="carousel-item">
-                            <img className="h-[450px]" src={slider1} alt="Pizza" />
+                            <img className="h-[450px]" src={slider1} alt="" />
                         </div>
                         <div className="carousel-item">
-                            <img className="h-[450px]" src={slider2} alt="Pizza" />
+                            <img className="h-[450px]" src={slider2} alt="" />
                         </div>
                         <div className="carousel-item">
-                            <img className="h-[450px]" src={slider3} alt="Pizza" />
+                            <img className="h-[450px]" src={slider3} alt="" />
                         </div>
                         <div className="carousel-item">
-                            <img className="h-[450px]" src={slider4} alt="Pizza" />
+                            <img className="h-[450px]" src={slider4} alt="" />
                         </div>
                         <div className="carousel-item">
-                            <img className="h-[450px]" src={slider6} alt="Pizza" />
+                            <img className="h-[450px]" src={slider6} alt="" />
                         </div>
                         <div className="carousel-item">
-                            <img className="h-[450px]" src={slider7} alt="Pizza" />
+                            <img className="h-[450px]" src={slider7} alt="" />
                         </div>
                         <div className="carousel-item">
-                            <img className="h-[450px]" src={slider8} alt="Pizza" />
+                            <img className="h-[450px]" src={slider8} alt="" />
                         </div>
                     </div>
                 </div>

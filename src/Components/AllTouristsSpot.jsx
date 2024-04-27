@@ -3,7 +3,6 @@ import "../App.css";
 import { FaAngleDown,} from "react-icons/fa";
 import { useEffect, useState } from "react";
 const AllTouristsSpot = () => {
-    // let allTouristsSpot = useLoaderData()
     let [allTourists, setAllTourists] = useState([])
     console.log(allTourists)
 
