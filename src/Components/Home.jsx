@@ -5,6 +5,7 @@ import "../App.css"
 const Home = () => {
     let tourist = useLoaderData()
 
+
     return (
         <div>
             <Header></Header>

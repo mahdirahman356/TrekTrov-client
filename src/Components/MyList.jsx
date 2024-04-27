@@ -8,8 +8,9 @@ import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 const MyList = () => {
     let {user} = useContext(AuthContext)
-
     let [mylist, setMylist] = useState([])
+
+
 
     useEffect(() => {
      fetch(`http://localhost:5000/touristsSpot/email/${user?.email}`)

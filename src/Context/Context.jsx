@@ -62,7 +62,8 @@ const Context = ({children}) => {
       googleSignIn, 
       githubSignIn, 
       userSignOut,
-      loading
+      loading,
+      setLoading
     }
     
     return (

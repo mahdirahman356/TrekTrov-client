@@ -3,7 +3,7 @@ import "../App.css"
 import { useContext } from "react";
 import { AuthContext } from "../Context/Context";
 const SignUp = () => {
-    let {createUser} = useContext(AuthContext)
+    let {createUser, loading, setLoading} = useContext(AuthContext)
     let handleSignUp = (e) => {
         e.preventDefault()
         let form = e.target
@@ -12,6 +12,7 @@ const SignUp = () => {
         console.log(email, password)
         createUser(email, password)
         .then(result => {
+            setLoading(false)
             console.log(result.user)
             form.reset()
 
@@ -23,6 +24,7 @@ const SignUp = () => {
     }
     return (
         <div>
+            {loading && <div className="h-[80vh] flex justify-center items-center"> <span className="loading loading-spinner loading-lg"></span></div>}
              <div className="w-[95%] md:w-[60%] mx-auto my-5 md:mb-16 bg-[#F4F3F0] p-5 md:p-20">
             <div className="text-center md:w-[70%] mx-auto">
                     <h3 className="text-4xl bubblegum mb-3">Create Your Account</h3>

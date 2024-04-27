@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import "../App.css";
 import { FaAngleDown,} from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Context/Context";
 const AllTouristsSpot = () => {
     let [allTourists, setAllTourists] = useState([])
     console.log(allTourists)
 
+    let {loading, setLoading} = useContext(AuthContext)
+
     useEffect(() => {
+     setLoading(false)
      fetch("http://localhost:5000/touristsSpot")
      .then(res => res.json())
      .then(data => setAllTourists(data))
@@ -19,6 +23,7 @@ const AllTouristsSpot = () => {
     
     return (
         <div>
+            {loading && <div className="h-[80vh] flex justify-center items-center"> <span className="loading loading-spinner loading-lg"></span></div>}
             <div className="text-center my-24 ubuntu w-[90%] md:w-[50%] mx-auto">
                 <p className="text-2xl md:text-3xl font-bold mb-3" >Discover Southeast Asia</p>
                 <p className="text-gray-500">Explore a curated collection of captivating tourist spots across Southeast Asia. Dive into stunning imagery and essential details to plan your next adventure effortlessly.</p>

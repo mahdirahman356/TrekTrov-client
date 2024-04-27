@@ -6,7 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 
 const SignIn = () => {
-    let { singInUser, googleSignIn, githubSignIn} = useContext(AuthContext)
+    let { singInUser, googleSignIn, githubSignIn, loading, setLoading} = useContext(AuthContext)
 
     let handleSignIn = (e) => {
         e.preventDefault()
@@ -17,6 +17,7 @@ const SignIn = () => {
 
         singInUser(email, password)
             .then(result => {
+                setLoading(false)
                 console.log(result.user)
                 form.reset()
             })
@@ -29,6 +30,7 @@ const SignIn = () => {
     let handleGoogleLogin = () => {
         googleSignIn()
         .then((result) => {
+            setLoading(false)
             console.log(result.user)
         })
         .catch((error) => {
@@ -39,6 +41,7 @@ const SignIn = () => {
     let handleGithubLogin = () => {
         githubSignIn()
         .then((result) => {
+            setLoading(false)
             console.log(result.user)
         })
         .catch((error) => {
@@ -48,6 +51,7 @@ const SignIn = () => {
     
     return (
         <div>
+            {loading && <div className="h-[80vh] flex justify-center items-center"> <span className="loading loading-spinner loading-lg"></span></div>}
             <div className="w-[95%] md:w-[60%] mx-auto my-5 md:mb-16 bg-[#F4F3F0] p-5 md:p-20">
                 <div className="text-center md:w-[70%] mx-auto">
                     <h3 className="text-4xl bubblegum mb-3">Login Your Account</h3>
