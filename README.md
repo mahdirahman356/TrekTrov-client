@@ -1,6 +1,6 @@
 # TrekTrov - Southeast Asia Tourism Management Website
 
-## Live Website: [TrekTrov](https://www.trek-trov.com)
+## Live Website: [https://trektrov-c76b3.web.app/](https://trektrov-c76b3.web.app/)
 
 ### Features:
 - Comprehensive coverage of Southeast Asian tourist destinations.
