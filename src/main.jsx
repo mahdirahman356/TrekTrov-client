@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch("http://localhost:5000/touristsSpot"),
+        loader: () => fetch("https://trek-trove-sarver.vercel.app/touristsSpot"),
         element: <Home></Home>
       },
       {
@@ -46,19 +46,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        loader: ({ params }) => fetch(`http://localhost:5000/touristsSpot/${params.id}`),
+        loader: ({ params }) => fetch(`https://trek-trove-sarver.vercel.app/touristsSpot/${params.id}`),
         element: <Update></Update>
       },
       {
         path: "/touristsDetails/:id",
-        loader: ({ params }) => fetch(`http://localhost:5000/touristsSpot/${params.id}`),
+        loader: ({ params }) => fetch(`https://trek-trove-sarver.vercel.app/touristsSpot/${params.id}`),
         element: <PrivetRoute>
           <TouristsSpotDetails></TouristsSpotDetails>
         </PrivetRoute>
       },
       {
         path: "/allTouristsSpot",
-        loader: () => fetch("http://localhost:5000/touristsSpot"),
+        loader: () => fetch("https://trek-trove-sarver.vercel.app/touristsSpot"),
         element:<AllTouristsSpot></AllTouristsSpot>
       },
       {
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/countryTourists/:countryName",
-        loader: ({params}) => fetch(`http://localhost:5000/touristsSpot/countryName/${params.countryName}`),
+        loader: ({params}) => fetch(`https://trek-trove-sarver.vercel.app/touristsSpot/countryName/${params.countryName}`),
         element:<CountryTourists></CountryTourists>
       }
     ]

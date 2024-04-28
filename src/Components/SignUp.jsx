@@ -11,6 +11,33 @@ const SignUp = () => {
         let email = form.email.value
         let password = form.password.value
         console.log(email, password)
+        if (password.length < 6) {
+            Swal.fire({
+                title: 'Error',
+                text: 'Password should be at least 6 characters',
+                icon: 'error',
+                confirmButtonText: 'close'
+              })            
+              return
+        }
+        if (!/[A-Z]/.test(password)) {
+            Swal.fire({
+                title: 'Error',
+                text: 'Your password must contain at least one Uppercase character',
+                icon: 'error',
+                confirmButtonText: 'close'
+              })                 
+              return
+        }
+        if (!/[a-z]/.test(password)) {
+            Swal.fire({
+                title: 'Error',
+                text: 'Your password must contain at least one  Lowercase character',
+                icon: 'error',
+                confirmButtonText: 'close'
+              })                 
+              return
+        }
         createUser(email, password)
         .then(result => {
             console.log(result.user)

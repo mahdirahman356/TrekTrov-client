@@ -10,7 +10,7 @@ const AllTouristsSpot = () => {
 
     useEffect(() => {
      setLoading(false)
-     fetch("http://localhost:5000/touristsSpot")
+     fetch("https://trek-trove-sarver.vercel.app/touristsSpot")
      .then(res => res.json())
      .then(data => setAllTourists(data))
     },[setLoading])

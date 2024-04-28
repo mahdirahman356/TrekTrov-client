@@ -13,7 +13,7 @@ const MyList = () => {
 
 
     useEffect(() => {
-     fetch(`http://localhost:5000/touristsSpot/email/${user?.email}`)
+     fetch(`https://trek-trove-sarver.vercel.app/touristsSpot/email/${user?.email}`)
      .then(res => res.json())
      .then(data => {
         setMylist(data)
@@ -31,7 +31,7 @@ const MyList = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/touristsSpot/${id}`, {
+                fetch(`https://trek-trove-sarver.vercel.app/touristsSpot/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

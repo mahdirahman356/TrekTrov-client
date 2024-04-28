@@ -3,7 +3,6 @@ import { Link, useLoaderData } from "react-router-dom";
 const CountryTourists = () => {
 
     let country = useLoaderData()
-    console.log(country)
     return (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-[95%] md:w-[80%] mx-auto mt-28">
             {country.map((country, index) =>

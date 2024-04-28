@@ -8,7 +8,7 @@ const Countries = () => {
     let [country, setCountry] = useState([])
 
     useEffect(() => {
-    fetch("http://localhost:5000/country")
+    fetch("https://trek-trove-sarver.vercel.app/country")
     .then(res => res.json())
     .then(data => setCountry(data))
     },[])

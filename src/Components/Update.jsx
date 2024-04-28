@@ -21,7 +21,7 @@ const Update = () => {
         let description = form.description.value
         let addTourists = {touristSpot,  photoURL, cost, seasonality, travelTime, perYear, countryName, location, email,description,  name}
         console.log(addTourists)
-        fetch(`http://localhost:5000/touristsSpot/${_id}`, {
+        fetch(`https://trek-trove-sarver.vercel.app/touristsSpot/${_id}`, {
             method: "PUT",
             headers: {"content-type" : "application/json"},
             body: JSON.stringify(addTourists)

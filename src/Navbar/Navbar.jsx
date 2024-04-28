@@ -22,8 +22,6 @@ const Navbar = () => {
         setThem("light")
        }
     }
-    console.log(theme)
-
 
     let handleSignOut = () => {
         userSignOut()

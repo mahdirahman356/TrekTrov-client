@@ -1,8 +1,10 @@
-# React + Vite
+# TrekTrov - Southeast Asia Tourism Management Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Website: [TrekTrov](https://www.trek-trov.com)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Features:
+- Comprehensive coverage of Southeast Asian tourist destinations.
+- User-friendly interface with intuitive navigation.
+- Secure authentication and registration process.
+- Dynamic content including tourist spot cards and country information.
+- Responsive design ensuring seamless browsing across all devices.
