@@ -23,7 +23,7 @@ const AllTouristsSpot = () => {
     return (
         <div>
             {loading && <div className="h-[80vh] flex justify-center items-center"> <span className="loading loading-spinner loading-lg"></span></div>}
-            <div className="text-center my-24 ubuntu w-[90%] md:w-[50%] mx-auto">
+            <div className="text-center my-5 md:my-24 ubuntu w-[90%] md:w-[50%] mx-auto">
                 <p className="text-2xl md:text-3xl font-bold mb-3" >Discover Southeast Asia</p>
                 <p className="text-gray-500">Explore a curated collection of captivating tourist spots across Southeast Asia. Dive into stunning imagery and essential details to plan your next adventure effortlessly.</p>
             </div>
@@ -38,7 +38,7 @@ const AllTouristsSpot = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-[95%] md:w-[80%] mx-auto">
                 {
                     allTourists.map((allTourists, index) =>
-                    <div key={index} className="card w-96 bg-base-100 shadow-xl">
+                    <div key={index} className="card bg-base-100 shadow-xl">
                     <figure><img src={allTourists.photoURL} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{allTourists.touristSpot}</h2>

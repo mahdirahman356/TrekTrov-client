@@ -5,7 +5,7 @@ const TouristsSpotDetails = () => {
     let {touristSpot,  photoURL, cost, seasonality, travelTime, perYear, countryName, location, description,} = touristDetails
     return (
         <div>
-<div className="card card-side h-full p-4 md:p-7 flex flex-col md:flex-row items-center gap-8 bg-[#ebe9e2] bg-opacity-40 w-[95%] md:w-[80%] mx-auto px-4 my-28">
+<div className="card card-side h-full p-4 md:p-7 flex flex-col md:flex-row items-center gap-8 bg-[#ebe9e2] bg-opacity-40 w-[95%] md:w-[80%] mx-auto px-4 my-4 md:my-28">
                 <figure className="w-[80%] rounded-xl"><img className="min-w-2xl" src={photoURL} alt="Movie" /></figure>
 
                 <div className='space-y-1'>

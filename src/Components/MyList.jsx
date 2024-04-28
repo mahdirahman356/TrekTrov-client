@@ -53,7 +53,7 @@ const MyList = () => {
     return (
         <div>
             <div>
-                <div className="text-center my-24 ubuntu w-[90%] md:w-[50%] mx-auto">
+                <div className="text-center my-5 md:my-24 ubuntu w-[90%] md:w-[50%] mx-auto">
                    <p className="text-2xl md:text-3xl font-bold mb-3">Your Personal Travel Collection</p>
                     <p className="text-gray-500">Manage your own curated collection of favorite tourist spots with My List. Keep track of your most cherished destinations, update details, and plan future adventures seamlessly. Your personalized travel guide awaits!</p>
                 </div>
