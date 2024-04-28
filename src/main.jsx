@@ -47,7 +47,9 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         loader: ({ params }) => fetch(`https://trek-trove-sarver.vercel.app/touristsSpot/${params.id}`),
-        element: <Update></Update>
+        element: <PrivetRoute>
+          <Update></Update>
+        </PrivetRoute>
       },
       {
         path: "/touristsDetails/:id",
